@@ -1,5 +1,5 @@
 on:
-  create:
+  push:
 
 env:
   DEFAULT_GO_VERSION: '1.20'
@@ -12,7 +12,6 @@ jobs:
     name: Release Please
     runs-on: ubuntu-latest
     # Release-please creates a PR that tracks all changes
-
     steps:
       - name: Get current date
         id: date
