@@ -1,5 +1,144 @@
 # Changelog
 
+## [0.12.0](https://github.com/Kavindu-Dodan/flagd/compare/flagd-v0.11.1...flagd/v0.12.0) (2024-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* support emitting errors from the bulk evaluator ([#1338](https://github.com/Kavindu-Dodan/flagd/issues/1338))
+* allow custom seed when using targetingKey override for fractional op ([#1266](https://github.com/Kavindu-Dodan/flagd/issues/1266))
+* new proto (flagd.sync.v1) for sync sources ([#1214](https://github.com/Kavindu-Dodan/flagd/issues/1214))
+* remove deprecated flags ([#1075](https://github.com/Kavindu-Dodan/flagd/issues/1075))
+* OFO APIs were updated to version v1beta1, since they are more stable now. Resources of the alpha versions are no longer supported in flagd or flagd-proxy.
+
+### 🐛 Bug Fixes
+
+* **deps:** update module buf.build/gen/go/open-feature/flagd/connectrpc/go to v1.16.2-20240215170432-1e611e2999cc.1 ([#1293](https://github.com/Kavindu-Dodan/flagd/issues/1293)) ([2694e7f](https://github.com/Kavindu-Dodan/flagd/commit/2694e7f99fc356c23b6b34265418b0b0160deb62))
+* **deps:** update module buf.build/gen/go/open-feature/flagd/grpc/go to v1.4.0-20240215170432-1e611e2999cc.1 ([#1333](https://github.com/Kavindu-Dodan/flagd/issues/1333)) ([494062f](https://github.com/Kavindu-Dodan/flagd/commit/494062fed891fab0fb659352142dbbc97c8f1492))
+* **deps:** update module buf.build/gen/go/open-feature/flagd/grpc/go to v1.4.0-20240215170432-1e611e2999cc.2 ([#1342](https://github.com/Kavindu-Dodan/flagd/issues/1342)) ([efdd921](https://github.com/Kavindu-Dodan/flagd/commit/efdd92139903b89ac986a62ff2cf4f5cfef91cde))
+* **deps:** update module buf.build/gen/go/open-feature/flagd/grpc/go to v1.5.1-20240215170432-1e611e2999cc.1 ([#1372](https://github.com/Kavindu-Dodan/flagd/issues/1372)) ([ae24595](https://github.com/Kavindu-Dodan/flagd/commit/ae2459504f7eccafebccec83fa1f72b08f41a978))
+* **deps:** update module buf.build/gen/go/open-feature/flagd/protocolbuffers/go to v1.34.2-20240215170432-1e611e2999cc.2 ([#1330](https://github.com/Kavindu-Dodan/flagd/issues/1330)) ([32291ad](https://github.com/Kavindu-Dodan/flagd/commit/32291ad93d25d79299a7a02381df70e2719c4fbc))
+* **deps:** update module github.com/cucumber/godog to v0.13.0 ([#855](https://github.com/Kavindu-Dodan/flagd/issues/855)) ([5b42486](https://github.com/Kavindu-Dodan/flagd/commit/5b4248654f7199afc50663e73609eeb20a3d11ec))
+* **deps:** update module github.com/open-feature/flagd/core to v0.10.0 ([#1340](https://github.com/Kavindu-Dodan/flagd/issues/1340)) ([1e487b4](https://github.com/Kavindu-Dodan/flagd/commit/1e487b4bafad9814f190d0bf3a1d833def9ef5af))
+* **deps:** update module github.com/open-feature/flagd/core to v0.10.1 ([#1355](https://github.com/Kavindu-Dodan/flagd/issues/1355)) ([8fcfb14](https://github.com/Kavindu-Dodan/flagd/commit/8fcfb146b0c55712c1758201ee4bc59e83b0898c))
+* **deps:** update module github.com/open-feature/flagd/core to v0.5.4 ([#693](https://github.com/Kavindu-Dodan/flagd/issues/693)) ([33705a6](https://github.com/Kavindu-Dodan/flagd/commit/33705a67300ec70760ba0baeb610f5a2e931205f))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.1 ([#745](https://github.com/Kavindu-Dodan/flagd/issues/745)) ([d290d8f](https://github.com/Kavindu-Dodan/flagd/commit/d290d8fda8aa84ed2db6454fdd26e60b028e3f7f))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.2 ([#779](https://github.com/Kavindu-Dodan/flagd/issues/779)) ([f34de59](https://github.com/Kavindu-Dodan/flagd/commit/f34de59fc8e636be043ce89758950d6ea3fe7376))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.3 ([#794](https://github.com/Kavindu-Dodan/flagd/issues/794)) ([9671964](https://github.com/Kavindu-Dodan/flagd/commit/96719649affeb1f8412e8b25f52d7292281d8230))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.4 ([#880](https://github.com/Kavindu-Dodan/flagd/issues/880)) ([ebb543d](https://github.com/Kavindu-Dodan/flagd/commit/ebb543d6eec18134e44ee7fe623fd2a336a1cf8d))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.5 ([#900](https://github.com/Kavindu-Dodan/flagd/issues/900)) ([c2ddcbf](https://github.com/Kavindu-Dodan/flagd/commit/c2ddcbfe49b8507fe463c11eb2b031bbc331792a))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.6 ([#916](https://github.com/Kavindu-Dodan/flagd/issues/916)) ([1f80e4d](https://github.com/Kavindu-Dodan/flagd/commit/1f80e4db9f8d1ba24884a71f2f8d552499ab5fe2))
+* **deps:** update module github.com/open-feature/flagd/core to v0.6.7 ([#966](https://github.com/Kavindu-Dodan/flagd/issues/966)) ([c038a3a](https://github.com/Kavindu-Dodan/flagd/commit/c038a3a3700eee82afa3e2cb2484614ec6ed566c))
+* **deps:** update module github.com/open-feature/flagd/core to v0.7.0 ([#1014](https://github.com/Kavindu-Dodan/flagd/issues/1014)) ([deec49e](https://github.com/Kavindu-Dodan/flagd/commit/deec49e99ef52f62adbf278a8f58936acbb86b9d))
+* **deps:** update module github.com/open-feature/flagd/core to v0.7.1 ([#1037](https://github.com/Kavindu-Dodan/flagd/issues/1037)) ([0ed9b68](https://github.com/Kavindu-Dodan/flagd/commit/0ed9b68341d026681c684a726b215ff910fe2a00))
+* **deps:** update module github.com/open-feature/flagd/core to v0.7.2 ([#1056](https://github.com/Kavindu-Dodan/flagd/issues/1056)) ([81e83ea](https://github.com/Kavindu-Dodan/flagd/commit/81e83ea0a4aa78d853ea7700cb06bb2a0f329619))
+* **deps:** update module github.com/open-feature/flagd/core to v0.7.3 ([#1104](https://github.com/Kavindu-Dodan/flagd/issues/1104)) ([b6c00c7](https://github.com/Kavindu-Dodan/flagd/commit/b6c00c7615040399b60f9085a8238d417445546d))
+* **deps:** update module github.com/open-feature/flagd/core to v0.7.4 ([#1119](https://github.com/Kavindu-Dodan/flagd/issues/1119)) ([e998e41](https://github.com/Kavindu-Dodan/flagd/commit/e998e41f7c6fc8007458dff08e66aa19c7b7b0e7))
+* **deps:** update module github.com/open-feature/flagd/core to v0.7.5 ([#1198](https://github.com/Kavindu-Dodan/flagd/issues/1198)) ([ce38845](https://github.com/Kavindu-Dodan/flagd/commit/ce388458b9c8a686a7b6ff38b532c941d43d842c))
+* **deps:** update module github.com/open-feature/flagd/core to v0.8.2 ([#1255](https://github.com/Kavindu-Dodan/flagd/issues/1255)) ([9005089](https://github.com/Kavindu-Dodan/flagd/commit/9005089b3e7c8ec4c1e52b42a59c0c05983647a2))
+* **deps:** update module github.com/open-feature/flagd/core to v0.9.0 ([#1281](https://github.com/Kavindu-Dodan/flagd/issues/1281)) ([3cfb052](https://github.com/Kavindu-Dodan/flagd/commit/3cfb0523cc857dd2019d712c621afe81c2b41398))
+* **deps:** update module github.com/open-feature/flagd/core to v0.9.3 ([#1296](https://github.com/Kavindu-Dodan/flagd/issues/1296)) ([1f7b8bd](https://github.com/Kavindu-Dodan/flagd/commit/1f7b8bd938f799da98462e45e52c0e1ac6cb83e6))
+* **deps:** update module github.com/open-feature/go-sdk to v1.8.0 ([#994](https://github.com/Kavindu-Dodan/flagd/issues/994)) ([266cf9f](https://github.com/Kavindu-Dodan/flagd/commit/266cf9f82ee8b4a4ba8ad1c0594388d2987a8c4b))
+* **deps:** update module github.com/open-feature/go-sdk-contrib/providers/flagd to v0.1.13 ([#697](https://github.com/Kavindu-Dodan/flagd/issues/697)) ([435448f](https://github.com/Kavindu-Dodan/flagd/commit/435448f449044eb5fff88c94e81883cc801c02c4))
+* **deps:** update module github.com/open-feature/go-sdk-contrib/providers/flagd to v0.1.17 ([#759](https://github.com/Kavindu-Dodan/flagd/issues/759)) ([a2a2c3c](https://github.com/Kavindu-Dodan/flagd/commit/a2a2c3c7effd1708136eaac5df00ae02276d5005))
+* **deps:** update module github.com/open-feature/go-sdk-contrib/providers/flagd to v0.1.18 ([#1011](https://github.com/Kavindu-Dodan/flagd/issues/1011)) ([90d4e4e](https://github.com/Kavindu-Dodan/flagd/commit/90d4e4e7d9db9e21fa38d96fdecb81ab78868732))
+* **deps:** update module github.com/open-feature/go-sdk-contrib/tests/flagd to v1.2.3 ([#749](https://github.com/Kavindu-Dodan/flagd/issues/749)) ([cd63e48](https://github.com/Kavindu-Dodan/flagd/commit/cd63e489d681c0998a9c38072410653473ce40fc))
+* **deps:** update module github.com/open-feature/go-sdk-contrib/tests/flagd to v1.3.1 ([#760](https://github.com/Kavindu-Dodan/flagd/issues/760)) ([30dda72](https://github.com/Kavindu-Dodan/flagd/commit/30dda72145c05de298140f880238ed37be73631a))
+* **deps:** update module github.com/rs/cors to v1.11.0 ([#1299](https://github.com/Kavindu-Dodan/flagd/issues/1299)) ([5f77541](https://github.com/Kavindu-Dodan/flagd/commit/5f775413fb33b4afed1ef98484463f07a67ed1cb))
+* **deps:** update module github.com/spf13/cobra to v1.8.0 ([#993](https://github.com/Kavindu-Dodan/flagd/issues/993)) ([05c7870](https://github.com/Kavindu-Dodan/flagd/commit/05c7870cc7662117f85e9c6528508327ae320b83))
+* **deps:** update module github.com/spf13/cobra to v1.8.1 ([#1332](https://github.com/Kavindu-Dodan/flagd/issues/1332)) ([c62bcb0](https://github.com/Kavindu-Dodan/flagd/commit/c62bcb0ec68fbcac40d16df001379f117c4df37e))
+* **deps:** update module github.com/spf13/viper to v1.16.0 ([#679](https://github.com/Kavindu-Dodan/flagd/issues/679)) ([798a975](https://github.com/Kavindu-Dodan/flagd/commit/798a975bb1a47420e814b6dd439f1cece1a263e5))
+* **deps:** update module github.com/spf13/viper to v1.17.0 ([#956](https://github.com/Kavindu-Dodan/flagd/issues/956)) ([31d015d](https://github.com/Kavindu-Dodan/flagd/commit/31d015d329ae9c1da3ec13878078371bcbf43fbf))
+* **deps:** update module github.com/spf13/viper to v1.18.0 ([#1060](https://github.com/Kavindu-Dodan/flagd/issues/1060)) ([9dfa689](https://github.com/Kavindu-Dodan/flagd/commit/9dfa6899ed3a25a5c34f8b0ebd152b01b1097dec))
+* **deps:** update module github.com/spf13/viper to v1.18.2 ([#1069](https://github.com/Kavindu-Dodan/flagd/issues/1069)) ([f0d6206](https://github.com/Kavindu-Dodan/flagd/commit/f0d620698abbde6ef455c2dd64b02a52eac96a89))
+* **deps:** update module github.com/spf13/viper to v1.19.0 ([#1334](https://github.com/Kavindu-Dodan/flagd/issues/1334)) ([1097b99](https://github.com/Kavindu-Dodan/flagd/commit/1097b9961b672d44a81e5b9e7a56f163e08e4909))
+* **deps:** update module go.uber.org/zap to v1.25.0 ([#786](https://github.com/Kavindu-Dodan/flagd/issues/786)) ([40d0aa6](https://github.com/Kavindu-Dodan/flagd/commit/40d0aa66cf422db6811206d777b55396a96f330f))
+* **deps:** update module go.uber.org/zap to v1.26.0 ([#917](https://github.com/Kavindu-Dodan/flagd/issues/917)) ([e57e206](https://github.com/Kavindu-Dodan/flagd/commit/e57e206c937d5b11b81d46ee57b3e92cc454dd88))
+* **deps:** update module golang.org/x/net to v0.26.0 ([#1337](https://github.com/Kavindu-Dodan/flagd/issues/1337)) ([83bdbb5](https://github.com/Kavindu-Dodan/flagd/commit/83bdbb5e7ea1be9da51d06e6b22c997f0354ef98))
+* **deps:** update module golang.org/x/net to v0.27.0 ([#1353](https://github.com/Kavindu-Dodan/flagd/issues/1353)) ([df9834b](https://github.com/Kavindu-Dodan/flagd/commit/df9834bea2a7ae20c5926c98dc423ab6363ef332))
+* **deps:** update module google.golang.org/grpc to v1.65.0 ([#1346](https://github.com/Kavindu-Dodan/flagd/issues/1346)) ([72a6b87](https://github.com/Kavindu-Dodan/flagd/commit/72a6b876e880ff0b43440d9b63710c7a87536988))
+* **deps:** update module google.golang.org/protobuf to v1.33.0 [security] ([#1248](https://github.com/Kavindu-Dodan/flagd/issues/1248)) ([b2b0fa1](https://github.com/Kavindu-Dodan/flagd/commit/b2b0fa19a6254c02c81ef44828b643a5a25ea5b5))
+* **deps:** update opentelemetry-go monorepo ([#1314](https://github.com/Kavindu-Dodan/flagd/issues/1314)) ([e9f1a7a](https://github.com/Kavindu-Dodan/flagd/commit/e9f1a7a04828f36691e694375b3c665140bc7dee))
+* **deps:** update opentelemetry-go monorepo ([#1347](https://github.com/Kavindu-Dodan/flagd/issues/1347)) ([37fb3cd](https://github.com/Kavindu-Dodan/flagd/commit/37fb3cd81d5436e9d8cd3ea490a3951ae5794130))
+* **deps:** update opentelemetry-go monorepo ([#868](https://github.com/Kavindu-Dodan/flagd/issues/868)) ([d48317f](https://github.com/Kavindu-Dodan/flagd/commit/d48317f61d7db7ba0398dc9ab7cdd174a0b87555))
+* invalid scoped-sync responses for empty flags ([#1352](https://github.com/Kavindu-Dodan/flagd/issues/1352)) ([51371d2](https://github.com/Kavindu-Dodan/flagd/commit/51371d25e25e1199336a5a831530506313628ff3))
+* readable error messages  ([#1325](https://github.com/Kavindu-Dodan/flagd/issues/1325)) ([7ff33ef](https://github.com/Kavindu-Dodan/flagd/commit/7ff33effcc47e31c5b7fdc33385d8128db2163fc))
+* update protobuff CVE-2024-24786 ([#1249](https://github.com/Kavindu-Dodan/flagd/issues/1249)) ([fd81c23](https://github.com/Kavindu-Dodan/flagd/commit/fd81c235fb4a09dfc42289ac316ac3a1d7eff58c))
+* use correct link in sources flag helper text in start cmd ([#1126](https://github.com/Kavindu-Dodan/flagd/issues/1126)) ([b9d30e0](https://github.com/Kavindu-Dodan/flagd/commit/b9d30e0a52eaf50553e1ce4c65f60bc67d931ea6))
+
+
+### ✨ New Features
+
+* allow custom seed when using targetingKey override for fractional op ([#1266](https://github.com/Kavindu-Dodan/flagd/issues/1266)) ([f62bc72](https://github.com/Kavindu-Dodan/flagd/commit/f62bc721e8ebc07e27fbe7b9ca085a8771295d65))
+* Create interface for eval events.  ([#1288](https://github.com/Kavindu-Dodan/flagd/issues/1288)) ([9714215](https://github.com/Kavindu-Dodan/flagd/commit/9714215cedb0fd28daddf086ce1255ec29b877d4))
+* move json logic operator registration to resolver ([#1291](https://github.com/Kavindu-Dodan/flagd/issues/1291)) ([b473457](https://github.com/Kavindu-Dodan/flagd/commit/b473457ddff28789fee1eeb6704491b6aa3525e3))
+* new proto (flagd.sync.v1) for sync sources ([#1214](https://github.com/Kavindu-Dodan/flagd/issues/1214)) ([544234e](https://github.com/Kavindu-Dodan/flagd/commit/544234ebd9f9be5f54c2865a866575a7869a56c0))
+* OFREP support for flagd  ([#1247](https://github.com/Kavindu-Dodan/flagd/issues/1247)) ([9d12fc2](https://github.com/Kavindu-Dodan/flagd/commit/9d12fc20702a86e8385564659be88f07ad36d9e5))
+* serve sync.proto on port 8015 ([#1237](https://github.com/Kavindu-Dodan/flagd/issues/1237)) ([7afdc0c](https://github.com/Kavindu-Dodan/flagd/commit/7afdc0cda47d080575cb87a94b35cfe051f88422))
+* support `FLAGD_DEBUG` / `--debug` / `-x` ([#1326](https://github.com/Kavindu-Dodan/flagd/issues/1326)) ([298bd36](https://github.com/Kavindu-Dodan/flagd/commit/298bd36698224a0dca8b289f4cb0b80ae2fa6e0a))
+* support emitting errors from the bulk evaluator ([#1338](https://github.com/Kavindu-Dodan/flagd/issues/1338)) ([b9c099c](https://github.com/Kavindu-Dodan/flagd/commit/b9c099cb7fa002a509a82c81b467f5e784c27e82))
+* support OFO v1beta1 API ([#997](https://github.com/Kavindu-Dodan/flagd/issues/997)) ([bb6f5bf](https://github.com/Kavindu-Dodan/flagd/commit/bb6f5bf0fc382ade75d80a34d209beaa2edc459d))
+
+
+### 🧹 Chore
+
+* adapt telemetry setup error handling ([#1315](https://github.com/Kavindu-Dodan/flagd/issues/1315)) ([20bcb78](https://github.com/Kavindu-Dodan/flagd/commit/20bcb78d11dbb16aab2b14d5869bb990a0f7bca5))
+* add new flagd-evaluator e2e suite ([#898](https://github.com/Kavindu-Dodan/flagd/issues/898)) ([37ab55d](https://github.com/Kavindu-Dodan/flagd/commit/37ab55d26a9902935e4f1ddfd1a6af28d3b1cfa4))
+* bump go deps to latest ([#1307](https://github.com/Kavindu-Dodan/flagd/issues/1307)) ([004ad08](https://github.com/Kavindu-Dodan/flagd/commit/004ad083dc01538791148d6233e453d2a3009fcd))
+* **deps:** update golang docker tag to v1.21 ([#822](https://github.com/Kavindu-Dodan/flagd/issues/822)) ([effe29d](https://github.com/Kavindu-Dodan/flagd/commit/effe29d50e33e6c06ef40d7f83f1b3f0df6bd1a2))
+* **deps:** update golang docker tag to v1.22 ([#1201](https://github.com/Kavindu-Dodan/flagd/issues/1201)) ([d14c69e](https://github.com/Kavindu-Dodan/flagd/commit/d14c69e93e56d32a37b2428f1db2d4ac79563597))
+* disable caching on integration tests ([#899](https://github.com/Kavindu-Dodan/flagd/issues/899)) ([16dd21e](https://github.com/Kavindu-Dodan/flagd/commit/16dd21e5834519af3a22ffeb989ab398f8c1ddd9))
+* docs rework ([#927](https://github.com/Kavindu-Dodan/flagd/issues/927)) ([27b3193](https://github.com/Kavindu-Dodan/flagd/commit/27b31938210c8930d9cbb31c1c76220d185b3949))
+* fix lint errors ([#987](https://github.com/Kavindu-Dodan/flagd/issues/987)) ([0c3af2d](https://github.com/Kavindu-Dodan/flagd/commit/0c3af2da01f91f6fc6d5ac78a33dd79032537ea9))
+* fix unit tests and ensure their execution ([#1316](https://github.com/Kavindu-Dodan/flagd/issues/1316)) ([25041c0](https://github.com/Kavindu-Dodan/flagd/commit/25041c016ae84afb01b8eb1e2b693aae3199a6ac))
+* move e2e tests to test ([#1005](https://github.com/Kavindu-Dodan/flagd/issues/1005)) ([a94b639](https://github.com/Kavindu-Dodan/flagd/commit/a94b6399e529ca03c6034eb86ec4028d7e8c2a82))
+* move packaging & isolate service implementations  ([#1234](https://github.com/Kavindu-Dodan/flagd/issues/1234)) ([b58fab3](https://github.com/Kavindu-Dodan/flagd/commit/b58fab3df030ef7e9e10eafa7a0141c05aa05bbd))
+* refactor evaluation core ([#1259](https://github.com/Kavindu-Dodan/flagd/issues/1259)) ([0e6604c](https://github.com/Kavindu-Dodan/flagd/commit/0e6604cd038dc13d7d40e622523320bf03efbcd0))
+* refactoring component structure ([#1044](https://github.com/Kavindu-Dodan/flagd/issues/1044)) ([0c7f78a](https://github.com/Kavindu-Dodan/flagd/commit/0c7f78a95fa4ad2a8b2afe2f6023b9c6d4fd48ed))
+* release main ([#1007](https://github.com/Kavindu-Dodan/flagd/issues/1007)) ([cfcd6bd](https://github.com/Kavindu-Dodan/flagd/commit/cfcd6bdf9c203770adfacaa5894880cb214c0daa))
+* release main ([#1017](https://github.com/Kavindu-Dodan/flagd/issues/1017)) ([14929dd](https://github.com/Kavindu-Dodan/flagd/commit/14929dd5c370a0314e689283508f325e85171fbf))
+* release main ([#1038](https://github.com/Kavindu-Dodan/flagd/issues/1038)) ([9e6e8d7](https://github.com/Kavindu-Dodan/flagd/commit/9e6e8d77eceaa8b75c181951a672064be649143b))
+* release main ([#1057](https://github.com/Kavindu-Dodan/flagd/issues/1057)) ([4711aaa](https://github.com/Kavindu-Dodan/flagd/commit/4711aaa0ec7560a3c226955b4e1626204fe7f759))
+* release main ([#1105](https://github.com/Kavindu-Dodan/flagd/issues/1105)) ([9bc9cae](https://github.com/Kavindu-Dodan/flagd/commit/9bc9cae340b67605215c94398e0b226855249866))
+* release main ([#1130](https://github.com/Kavindu-Dodan/flagd/issues/1130)) ([116ad36](https://github.com/Kavindu-Dodan/flagd/commit/116ad362aaf6248c743f0d73f784fcf9fed1389c))
+* release main ([#1209](https://github.com/Kavindu-Dodan/flagd/issues/1209)) ([534b5bf](https://github.com/Kavindu-Dodan/flagd/commit/534b5bf654384689964c0bab5f543457d29dab8f))
+* release main ([#1238](https://github.com/Kavindu-Dodan/flagd/issues/1238)) ([b755a64](https://github.com/Kavindu-Dodan/flagd/commit/b755a643bdfb87c4fbf67e275af41f5f04073944))
+* release main ([#1254](https://github.com/Kavindu-Dodan/flagd/issues/1254)) ([f72faeb](https://github.com/Kavindu-Dodan/flagd/commit/f72faebc0c361deded0c7d89e8ab62dcaf5de111))
+* release main ([#1267](https://github.com/Kavindu-Dodan/flagd/issues/1267)) ([584a469](https://github.com/Kavindu-Dodan/flagd/commit/584a469d08ea74c8916c43c1a2fd292c7e648dcd))
+* release main ([#1292](https://github.com/Kavindu-Dodan/flagd/issues/1292)) ([e1752ba](https://github.com/Kavindu-Dodan/flagd/commit/e1752badc2a68a230e8df4ac00fa0e4083ee0d58))
+* release main ([#1301](https://github.com/Kavindu-Dodan/flagd/issues/1301)) ([d58fe3c](https://github.com/Kavindu-Dodan/flagd/commit/d58fe3c3ac67843571d8fdc7d04b75996444befd))
+* release main ([#1319](https://github.com/Kavindu-Dodan/flagd/issues/1319)) ([01b50e0](https://github.com/Kavindu-Dodan/flagd/commit/01b50e09f9327a90056f1969598ffc9db780c41a))
+* release main ([#1327](https://github.com/Kavindu-Dodan/flagd/issues/1327)) ([f243202](https://github.com/Kavindu-Dodan/flagd/commit/f2432025f318401ab241c92644c3044a1dd497e6))
+* release main ([#1341](https://github.com/Kavindu-Dodan/flagd/issues/1341)) ([9ac329f](https://github.com/Kavindu-Dodan/flagd/commit/9ac329f9206360e532d615904f977309b0af71a5))
+* release main ([#643](https://github.com/Kavindu-Dodan/flagd/issues/643)) ([f3fbe6d](https://github.com/Kavindu-Dodan/flagd/commit/f3fbe6dc6f260caf0dd25737b0caeb46deaf3e0a))
+* release main ([#694](https://github.com/Kavindu-Dodan/flagd/issues/694)) ([dbf7d2b](https://github.com/Kavindu-Dodan/flagd/commit/dbf7d2ba01cc7815f9646e25479b75875212666e))
+* release main ([#750](https://github.com/Kavindu-Dodan/flagd/issues/750)) ([e3e03b0](https://github.com/Kavindu-Dodan/flagd/commit/e3e03b0af2ed3690aae8755facfe2bc8444c4f50))
+* release main ([#774](https://github.com/Kavindu-Dodan/flagd/issues/774)) ([53028b5](https://github.com/Kavindu-Dodan/flagd/commit/53028b57f9d3045dd8e98dca5cb0d7c2813bb957))
+* release main ([#780](https://github.com/Kavindu-Dodan/flagd/issues/780)) ([bf74c5a](https://github.com/Kavindu-Dodan/flagd/commit/bf74c5a3fc1b52108c2b057b3680576a90f31453))
+* release main ([#796](https://github.com/Kavindu-Dodan/flagd/issues/796)) ([ee9116b](https://github.com/Kavindu-Dodan/flagd/commit/ee9116b34715cca0e6794dd01fe9c9eaea693529))
+* release main ([#883](https://github.com/Kavindu-Dodan/flagd/issues/883)) ([43f15ea](https://github.com/Kavindu-Dodan/flagd/commit/43f15ea92339cb953b0dcfc6ee883cd0e1a4d9b3))
+* release main ([#902](https://github.com/Kavindu-Dodan/flagd/issues/902)) ([90152ef](https://github.com/Kavindu-Dodan/flagd/commit/90152efa005b1e7881c496c71dd1b7adfa4eeb1a))
+* release main ([#919](https://github.com/Kavindu-Dodan/flagd/issues/919)) ([3dd6929](https://github.com/Kavindu-Dodan/flagd/commit/3dd69297c4dcf87f4780432600903fd3f76916fb))
+* release main ([#967](https://github.com/Kavindu-Dodan/flagd/issues/967)) ([5b82d06](https://github.com/Kavindu-Dodan/flagd/commit/5b82d06eb7dc2e0ae14a4635321d2b91162ab3c2))
+* remove deprecated flags ([#1075](https://github.com/Kavindu-Dodan/flagd/issues/1075)) ([49f6fe5](https://github.com/Kavindu-Dodan/flagd/commit/49f6fe5679425b31b1e1cf39a2a2e4767b2e1db9))
+* update go deps ([#1279](https://github.com/Kavindu-Dodan/flagd/issues/1279)) ([219789f](https://github.com/Kavindu-Dodan/flagd/commit/219789fca8a929d552e4e8d1f6b6d5cd44505f43))
+* upgrade to go 1.20 ([#891](https://github.com/Kavindu-Dodan/flagd/issues/891)) ([977167f](https://github.com/Kavindu-Dodan/flagd/commit/977167fb8db330b62726097616dcd691267199ad))
+
+
+### 📚 Documentation
+
+* fixed typos and linting issues ([#957](https://github.com/Kavindu-Dodan/flagd/issues/957)) ([0bade57](https://github.com/Kavindu-Dodan/flagd/commit/0bade574005f8faf977de30b14ac89acbb276472))
+
+
+### 🔄 Refactoring
+
+* **flagd:** update build.Dockerfile with buildkit caching ([#724](https://github.com/Kavindu-Dodan/flagd/issues/724)) ([3e9cc1a](https://github.com/Kavindu-Dodan/flagd/commit/3e9cc1a7d697b64690a8772fe0ec8e84e34ebf6c))
+* **flagd:** update profile.Dockerfile with buildkit caching ([#723](https://github.com/Kavindu-Dodan/flagd/issues/723)) ([3f263c6](https://github.com/Kavindu-Dodan/flagd/commit/3f263c65a6fe8f9e1f42d105dfbc89b9497cd080))
+* introduce additional linting rules + fix discrepancies ([#616](https://github.com/Kavindu-Dodan/flagd/issues/616)) ([aef0b90](https://github.com/Kavindu-Dodan/flagd/commit/aef0b9042dcbe5b3f9a7e97960b27366fe50adfe))
+* migrate to connectrpc/connect-go ([#990](https://github.com/Kavindu-Dodan/flagd/issues/990)) ([7dd5b2b](https://github.com/Kavindu-Dodan/flagd/commit/7dd5b2b4c284481bcba5a9c45bd6c85ad1dc6d33))
+* remove protobuf dependency from eval package ([#701](https://github.com/Kavindu-Dodan/flagd/issues/701)) ([34ffafd](https://github.com/Kavindu-Dodan/flagd/commit/34ffafd9a777da3f11bd3bfa81565e774cc63214))
+* Rename metrics-port to management-port ([#1012](https://github.com/Kavindu-Dodan/flagd/issues/1012)) ([5635e38](https://github.com/Kavindu-Dodan/flagd/commit/5635e38703cae835a53e9cce83d5bc42d00091e2))
+
 ## [0.11.1](https://github.com/open-feature/flagd/compare/flagd/v0.11.0...flagd/v0.11.1) (2024-07-08)
 
 
